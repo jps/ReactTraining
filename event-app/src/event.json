@@ -1,0 +1,68 @@
+ {
+"title": "SPA in a Day",
+"subtitle": "Building with React",
+"start": "2016-10-14T10:00:00",
+"end": "2016-10-14T16:30:00",
+"sessions": [
+ {
+   "type": "session",
+   "code": "INTRO",
+   "title": "Introduction",
+   "description": "This session aims to set context and give light start to React in a day session. In this we will have start with single page application, brief history of why React was created and what it has to offer. There are 100’s of sites that use it, we look at few big names that use React.",
+   "runOrder": 1
+ },
+ {
+   "type": "session",
+   "code": "COMPONENT101",
+   "title": "Components",
+   "description": "Components are at heart of React library, and good understanding is key to learn React. In this section we will cover detailed overview on components. Session will help you get familiarise with concepts like Components, Props, Lifecycle and component composition.",
+   "runOrder": 2
+ },
+ {
+   "type": "break",
+   "code": "BREAK1",
+   "title": "Break",
+   "runOrder": 3
+ },
+ {
+   "type": "session",
+   "code": "STATE",
+   "title": "Data Flow, Events & State",
+   "description": "Now that we know components, lets understand data flows and events. We also go under the hood and understand why React is fast understand Virtual DOM and so good practices when working with lists. Finally, we look into Forms and understand controlled and uncontrolled components.",
+   "runOrder": 4
+ },
+ {
+   "type": "break",
+   "title": "Lunch",
+   "code": "LUNCH",
+   "runOrder": 5
+ },
+ {
+   "type": "session",
+   "code": "COMPOSITION",
+   "title": "Component Composition",
+   "description": "Composition is a section looks into various ideas on categorising components, different patters used to organise them, understand what are Higher order component and when you can use them.",
+   "runOrder": 6
+ },
+ {
+   "type": "session",
+   "code": "ROUTING",
+   "title": "Routing",
+   "description": "A single page application is incomplete without Routes. Beauty of working with React is you have flexibility of choosing any routing library that fits with your requirement. In this session we will have a brief look at Reacts own V4 library and how it brings component thinking into routing that makes it extremely easy to work with.",
+   "runOrder": 7
+ },
+ {
+   "type": "break",
+   "code": "BREAK2",
+   "title": "Break",
+   "runOrder": 8
+ },
+ {
+   "type": "session",
+   "code": "BEYOND",
+   "title": "Beyond React",
+   "description": "We've covered the basics of React in under a day. Theres just two remaining areas we'll cover to finish off the day. We'll take a look at how you can improve state handling for larger applications using Redux, and the test support in the create-react-app CLI with Jest, plus what to do when you outgrow the CLI.",
+   "runOrder": 11
+ }
+]
+}
