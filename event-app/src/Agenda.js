@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Resources from './Resources';
 
-let Agenda = ({sessions, openFeedbackModal, feedback}) => <div>
+let Agenda = ({sessions, openFeedbackModal, feedback}) => <>
     <div>{sessions.length} sessions.</div>
     <div>
       {sessions.map((session) => {
@@ -26,6 +26,6 @@ let Agenda = ({sessions, openFeedbackModal, feedback}) => <div>
         })}
         </ul>
     </div>
-  </div>
+  </>
 
 export default Agenda

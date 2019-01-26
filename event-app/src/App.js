@@ -1,6 +1,8 @@
 import { getEvent } from './EventData';
 import React, { Component } from 'react';
-import Modal from 'react-modal'
+import Modal from 'react-modal';
+import ReactDom from 'react-dom';
+
 import { 
     BrowserRouter as Router, 
     Route, 
@@ -10,6 +12,8 @@ import Resources from './Resources';
 
 import Agenda from './Agenda';
 import FeedbackForm from './FeedbackForm'
+import ErrorBoundry from './ErrorBoundry'
+import LogPropsHOC from './LogPropsHOC'
 
 import './App.css';
 import Session2 from './Session2';
@@ -27,6 +31,9 @@ const styles = {
       margin: "0px 6px"
   }
 }
+
+const EnhancedAgenda = LogPropsHOC(Agenda);
+
 
 class App extends Component {
 
@@ -47,7 +54,6 @@ class App extends Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.event = getEvent();
-
   }
 
 
@@ -100,7 +106,6 @@ class App extends Component {
   }
 
 
-
   render() {
     let currentSession = this.event.sessions.find((session) => session.code === this.state.feedback.currentSession);
     let feedback = this.state.feedback.entries.find((entry) => entry.code === this.state.feedback.currentSession)
@@ -108,8 +113,13 @@ class App extends Component {
     currentSession = currentSession ? currentSession : "";
     feedback = feedback ? feedback : { rating: "5", comment: "" };
 
+
+
     return (
-      
+      <>
+      {ReactDom.createPortal(<span>content written via a portal</span>, document.getElementById("portal"))}
+
+      <ErrorBoundry>
       <Router>
       <div>
       <header>
@@ -132,18 +142,25 @@ class App extends Component {
                 onDismiss={this.closeModal}
                 onSubmit={this.submitFeedback.bind(this)} />
             </Modal>
-            <Agenda
+            <ErrorBoundry>
+            <EnhancedAgenda
               sessions={this.event.sessions}
               feedback={this.state.feedback.entries}
               openFeedbackModal={this.openModal} />
+            </ErrorBoundry>
           </div>
         )} />
         <Route path="/resources" component={Resources}/>
+        
         <Route
           path="/session/:code"
           component={Session2} />
+        
       </div>
       </Router>
+      </ErrorBoundry>
+
+      </>
     );
   }
 }
